@@ -13,7 +13,7 @@ regex = r"(\w*),(.*)\n?"
 test_str = ("valeur, 456\nvaleur, 32\nvaleur, 5")
 
 matches = re.finditer(regex, test_str)
-Dickus = {}
+Dickus = dict()
 for matchNum, match in enumerate(matches):
     matchNum = matchNum + 1
 
@@ -24,7 +24,9 @@ for matchNum, match in enumerate(matches):
         if groupNum == 2:
             a = match.group(groupNum - 1)
             b = match.group(groupNum)
-            print(a,' , ',b)
-            Dickus += {a : b}
+            print(a,',',b)
+            Dickus[a] = b
 
 print(sorted(Dickus))
+
+file.close()
