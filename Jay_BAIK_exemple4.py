@@ -5,13 +5,15 @@
 
 file = open('data.txt', 'r')
 text = file.read()
+file.close()
+
 dic = dict()
 list = text.split('\n')
 
 for i in list:
     p = i.split(',')
-    dic[p[0]] = int(p[1])
-for key in sorted(dic):
-    print(key, '=>', dic[key])
+    newP = p[0].split(' ')
+    dic[newP[0]] = int(p[1])
 
-file.close()
+for key in sorted(dic, key=dic.get):
+    print(key, '=>', dic[key])
