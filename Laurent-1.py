@@ -14,17 +14,18 @@ print(mydic)
 
 
 #version avec des types d'objets différents triés par noms, chacun avec leur nombre :
-l0=[]
-l1=[]
-l2=[]
+lTypes=[]
+lNumbers=[]
 mydic={}
 #close implicite dans le for
 for line in open('data.txt'):
-        l0.append(line.split(',')[0].replace(' ',''))
-        l1.append(int(line.split(',')[1]))
-mydic=dict(zip(l0, l1))
+        lTypes.append(line.split(',')[0].replace(' ',''))
+        lNumbers.append(int(line.split(',')[1]))
+mydic=dict(zip(lTypes, lNumbers))
+lNumbers=[]
 for key in sorted(mydic):
-    l2.append(mydic[key])
-l0.sort()
-mydic=dict(zip(l0, l2))
+    lNumbers.append(mydic[key])
+lTypes.sort()
+mydic=dict(zip(lTypes, lNumbers))
 print(mydic)
+
