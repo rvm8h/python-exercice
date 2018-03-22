@@ -29,18 +29,19 @@ for key in sorted(dic):
 
 file.close()
 
-# Exercise 1
+# Exercise 1 Création d'un dictionnaire trié par valeurs à partir d'un fichier
 
 dic = dict()
 
 file = open('data.txt', 'r')
 lines = file.readlines()
+file.close()
 print ('Lignes du fichier %s : %s' % (file.name, lines))
 
 for row in lines:
     item = row.split(',')
     key = item[0].replace(' ','')
-    val = int(item[1].rstrip('\n'))
+    val = int(item[1].rstrip())
     dic[item[0]] = int(item[1])
 
 print(dic)
@@ -48,14 +49,25 @@ print(dic)
 for key in sorted(dic):
     print(key, '=>', dic[key])
 
-print (dic)
+tup = [(val, key) for key, val in dic.items()]
 
-file.close()
+tup.sort()
+
+print (tup)
+
+tup = [(key, val) for val, key in tup]
+
+print (tup)
+
+dicT = dict((y, x) for x, y in tup)
+
+print(dicT)
 
 # Exercise 2 Création de fichier avec uniquement des WARNING
 lst=[]
 file = open('jenkins.dat', 'r')
 lines = file.readlines()
+file.close()
 for line in lines:
     if "WARNING" in line:
         lst.append(line)
