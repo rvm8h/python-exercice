@@ -29,7 +29,9 @@ for key in sorted(dic):
 
 file.close()
 
-# Exercise 1 Création d'un dictionnaire trié par valeurs à partir d'un fichier
+# Exercise 1 Création d'un dictionnaire trié à partir d'un fichier
+
+print("\nExercise 1 Création d'un dictionnaire trié à partir d'un fichier : \n")
 
 dic = dict()
 
@@ -44,8 +46,8 @@ for row in lines:
     val = int(item[1].rstrip())
     dic[item[0]] = int(item[1])
 
-for key in sorted(dic):
-    print(key, '=>', dic[key])
+#for key in sorted(dic):
+#    print(key, '=>', dic[key])
 
 tup = [(key, val) for key, val in dic.items()]
 
@@ -53,7 +55,7 @@ tup.sort()
 
 dic = dict((x, y) for x, y in tup)
 
-print('Dic trié par clé : ', dic)
+print('\nDic trié par clé : ', dic)
 
 tup = [(val, key) for key, val in dic.items()]
 
@@ -69,7 +71,8 @@ dic = dict((y, x) for x, y in tup)
 
 print('Dic trié par valeur : ', dic)
 
-# Exercise 2 Création de fichier avec uniquement des WARNING
+# Exercise 2 Création de fichier avec uniquement les WARNING
+print("\nExercise 2 Création de fichier avec uniquement les WARNING : \n")
 lst=[]
 file = open('jenkins.dat', 'r')
 lines = file.readlines()
@@ -79,12 +82,15 @@ for line in lines:
         lst.append(line)
 out = open('lorenzo.ret', 'w')
 out.writelines(lst)
+print("Fichier écrit : ", out.name)
 out.close()
 
 # Exercise 3 Boucles while
 # Initialisez deux entiers : a = 0 et b = 10.
 # Écrire une boucle affichant et incrémentant la valeur de a tant qu’elle reste inférieure à celle de b.
 # Écrire une autre boucle décrémentant la valeur de b et affichant sa valeur si elle est impaire. Boucler tant que b n’est pas nul.
+
+print("\nExercise 3 Boucles while : \n")
 
 a = 0
 b = 10
