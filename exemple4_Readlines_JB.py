@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Version 2
+
+# Version 2 avec readlines()
 
 dict = dict()
 file = open('data.txt', 'r')
