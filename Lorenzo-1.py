@@ -1,5 +1,5 @@
 # Ouvrir le fichier data.txt
-# et mettre les valeurs dans un dictionnaire
+# et mettre les valeurs dans un dictionnaire et les trier
 
 l = []
 for line in open('data.txt'):
