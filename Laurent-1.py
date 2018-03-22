@@ -43,3 +43,14 @@ with open('jenkins.dat', 'r', encoding='utf-8') as fIn:
 with open('laurent.ret', 'w', encoding='utf-8') as fOut:
     fOut.writelines(l)
 
+
+#Boucles
+a=0
+b=10
+while a<b:
+    print('valeur de a :', a)
+    a += 1
+while b>0:
+    b -= 1
+    if b%2!=0:print('valeur de b : ', b)
+
