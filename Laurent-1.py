@@ -13,7 +13,7 @@ mydic={'valeur':l}
 print(mydic)
 
 
-#version avec des types d'objets différents triés par noms, chacun avec leur nombre :
+#Version avec des types d'objets différents triés par noms, chacun avec leur nombre :
 lTypes=[]
 lNumbers=[]
 mydic={}
@@ -28,4 +28,15 @@ for key in sorted(mydic):
 lTypes.sort()
 mydic=dict(zip(lTypes, lNumbers))
 print(mydic)
+
+
+#Création d'un fichier ne contenant que les chaines WARNING du fichier jenkins.dat
+l=[]
+with open('jenkins.dat', 'r', encoding='utf-8') as fIn:
+    for line in fIn.readlines():
+        if "WARNING" in line:
+            l.append(line)
+fOut=open('laurent.ret', 'w', encoding='utf-8')
+fOut.writelines(l)
+fOut.close()
 
