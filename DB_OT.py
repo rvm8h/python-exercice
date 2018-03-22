@@ -13,7 +13,7 @@
 #Le résultat de la requête devra être une ligne de texte bien formatée, telle par exemple : « Nom : Jean - age : 15 ans - taille : 1. 74 m
 
 
-
+#V1
 #dictionary setting
 database = dict()
 
@@ -59,3 +59,40 @@ while 1:
         break
     else:
         DatabaseOut(NameIn)
+
+
+#V2
+def DbIn():
+
+    while 1:
+
+        name = input("entrez un nom: ")
+        if name == "":
+            print("breaking")
+            break
+        else:
+            age = int(input("entrez un âge: "))
+            height = float(input("entrez une taille: "))
+            database[name] = age, height
+
+    return print(database)
+
+def DbOut():
+
+    while 1:
+
+        NameIn = input("Recherche: ")
+        if NameIn == "":
+
+            print("breaking")
+            break
+        else:
+
+            age = database[NameIn][0]
+            height = database[NameIn][1]
+            print("Nom :", NameIn, "- age :", age, "- taille : ", height, "m")
+
+    return
+
+DbIn()
+DbOut()
