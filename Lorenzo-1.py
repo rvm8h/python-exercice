@@ -116,7 +116,7 @@ def displayDic(k):
         print(dic)
     else:
         items = dic[k]
-        print(k, 'a', str(items[0]), 'ans et mesure', str(items[1]), 'cm')
+        print(k, 'a', str(items[0]), 'ans et mesure', str(items[1]), 'm')
     return
 
 
