@@ -5,11 +5,11 @@
 
 l = []
 for line in open('data.txt'):
-        l.append(int(line.split(',')[1]))
-d={'Valeurs': l}
+    l.append(int(line.split(',')[1]))
+d = {'Valeurs': l}
 print(d)
 
-#Second version
+# Second version
 dic = dict()
 file = open('data.txt', 'r')
 txt = file.read()
@@ -38,15 +38,15 @@ dic = dict()
 file = open('data.txt', 'r')
 lines = file.readlines()
 file.close()
-print ('Lignes du fichier %s : %s' % (file.name, lines))
+print('Lignes du fichier %s : %s' % (file.name, lines))
 
 for row in lines:
     item = row.split(',')
-    key = item[0].replace(' ','')
+    key = item[0].replace(' ', '')
     val = int(item[1].rstrip())
     dic[item[0]] = int(item[1])
 
-#for key in sorted(dic):
+# for key in sorted(dic):
 #    print(key, '=>', dic[key])
 
 tup = [(key, val) for key, val in dic.items()]
@@ -61,11 +61,11 @@ tup = [(val, key) for key, val in dic.items()]
 
 tup.sort()
 
-#print (tup)
+# print (tup)
 
 tup = [(key, val) for val, key in tup]
 
-#print (tup)
+# print (tup)
 
 dic = dict((y, x) for x, y in tup)
 
@@ -73,7 +73,7 @@ print('Dic trié par valeur : ', dic)
 
 # Exercise 2 Création de fichier avec uniquement les WARNING
 print("\nExercise 2 Création de fichier avec uniquement les WARNING : \n")
-lst=[]
+lst = []
 file = open('jenkins.dat', 'r')
 lines = file.readlines()
 file.close()
@@ -95,13 +95,13 @@ print("\nExercise 3 Boucles while : \n")
 a = 0
 b = 10
 
-while a < b :
+while a < b:
     a += 1
     print("Valeur de a : ", a)
 
-while b > 0 :
+while b > 0:
     b -= 1
-    if b%2!=0:
+    if b % 2 != 0:
         print("Valeur de b : ", b)
 
 # Exercice 4 Mini base de données
@@ -109,14 +109,16 @@ print("\nExercice 4 Mini base de données : \n")
 
 dic = dict()
 
+
 # Affiche le Dic
 def displayDic(k):
-    if k == "all" :
+    if k == "all":
         print(dic)
     else:
         items = dic[k]
         print(k, 'a', str(items[0]), 'ans et mesure', str(items[1]), 'cm')
     return
+
 
 # Remplit le Dic
 def fillDic():
@@ -131,6 +133,7 @@ def fillDic():
             dic[nom] = (age, taille)
             displayDic('all')
     return
+
 
 # Recherche dans le Dic
 def searchDic():
@@ -159,14 +162,15 @@ print("\nExercice 5 Fonction recherchant les caractères communs à deux chaîne
 s1 = 'SPAM'
 s2 = 'SCAM'
 
-def common(str1,str2):
 
+def common(str1, str2):
     common = []
 
-    for x in set(str1):
-        for y in set(str2):
+    for x in str1:
+        for y in str2:
             if x == y:
-              common.append(x)
+                common.append(x)
     return common
 
-print('Les caractères communs à', s1, 'et', s2, 'sont :', common(s1,s2))
+
+print('Les caractères communs à', s1, 'et', s2, 'sont :', common(s1, s2))
