@@ -3,17 +3,18 @@
 # et mettre les valeurs dans un dictionnaire
 # trier le dictionnaire par valeur
 
+# Version 1
 file = open('data.txt', 'r')
 text = file.read()
 file.close()
 
-dic = dict()
+dict = dict()
 list = text.split('\n')
 
 for i in list:
     p = i.split(',')
     newP = p[0].split(' ')
-    dic[newP[0]] = int(p[1])
+    dict[newP[0]] = int(p[1])
 
-for key in sorted(dic, key=dic.get):
-    print(key, '=>', dic[key])
+for key in sorted(dict, key=dict.get):
+    print(key, '=>', dict[key])
