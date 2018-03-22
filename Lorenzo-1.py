@@ -29,7 +29,7 @@ for key in sorted(dic):
 
 file.close()
 
-# Exercise
+# Exercise 1
 
 dic = dict()
 
@@ -40,10 +40,10 @@ print ('Lignes du fichier %s : %s' % (file.name, lines))
 for row in lines:
     item = row.split(',')
     key = item[0].replace(' ','')
-    val = int(item[1])
+    val = int(item[1].rstrip('\n'))
     dic[item[0]] = int(item[1])
 
-#print(dic)
+print(dic)
 
 for key in sorted(dic):
     print(key, '=>', dic[key])
@@ -51,3 +51,16 @@ for key in sorted(dic):
 print (dic)
 
 file.close()
+
+# Exercise 2
+
+file = open('jenkins.dat', 'r')
+lines = file.readlines()
+print(lines)
+file.close()
+
+file = open('lorenzo.ret', 'w')
+file.write('test')
+
+file.close()
+
