@@ -114,8 +114,8 @@ def displayDic(k):
     if k == "all" :
         print(dic)
     else:
-
-        print(dic[k])
+        items = dic[k]
+        print(k, 'a', str(items[0]), 'ans et mesure', str(items[1]), 'cm')
     return
 
 # Remplit le Dic
@@ -128,7 +128,7 @@ def fillDic():
         else:
             age = int(input("Entrez un âge : "))
             taille = float(input("Entrez une taille : "))
-            dic[nom] = age, taille
+            dic[nom] = (age, taille)
             displayDic('all')
     return
 
@@ -136,9 +136,8 @@ def fillDic():
 def searchDic():
     print("Fonction de recherche dans la base")
     while 1:
-        nom = input("Entrez le nom de la personne : ")
+        nom = input("Entrez le nom de la personne à rechercher: ")
         if nom in dic :
-            print("Cette personne est dans la base :")
             displayDic(nom)
             break
         else:
