@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Version 2
 
 dict = dict()
@@ -13,7 +14,6 @@ print("Tableau sans tri: ")
 print(dict)
 print("\n")
 
-# print(dict.items())
 t = [(v, k) for k, v in dict.items()]
 t.sort()
 
