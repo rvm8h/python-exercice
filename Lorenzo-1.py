@@ -122,8 +122,8 @@ def displayDic(k):
 def fillDic():
     print("Fonction d'ajout dans la base")
     while 1:
-        nom = input("Entrez un nom ou 'q' pour sortir : ")
-        if nom == "" or nom == "q":
+        nom = input("Entrez un nom ou appuyer sur Entrée pour sortir : ")
+        if nom == "":
             break
         else:
             age = int(input("Entrez un âge : "))
@@ -136,8 +136,10 @@ def fillDic():
 def searchDic():
     print("Fonction de recherche dans la base")
     while 1:
-        nom = input("Entrez le nom de la personne à rechercher: ")
-        if nom in dic :
+        nom = input("Entrez le nom de la personne à rechercher ou appuyer sur Entrée pour sortir : ")
+        if nom == "":
+            break
+        if nom in dic:
             displayDic(nom)
             break
         else:
