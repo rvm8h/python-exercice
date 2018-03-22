@@ -40,6 +40,31 @@ for matchNum, match in enumerate(matches):
         #print(Dickus)
 
 #output sorted dictionary
-print('Dictionary:',Dickus,'\nSorted Dictionary:',sorted(Dickus))
+print('Dictionary:',Dickus,'\nSorted Dictionary:',sorted(Dickus),'\n\n')
+
+file.close()
+
+
+#opening input file
+file = open('data.txt', 'r')
+
+#reading input file
+lines = file.readlines()
+
+#dictionary
+Dickus = dict()
+
+#deleting \n
+for x in range(len(lines)):
+   lines[x] = lines[x].strip("\n").split(",")
+
+   for y in range(len(lines[x])):
+       lines[x][y] = lines[x][y].replace(" ","")
+
+for x in range(len(lines)):
+    Dickus[lines[x][0]] = int(lines[x][1])
+
+
+print('Dictionary:', Dickus , '\nSorted by keys:', sorted(Dickus))
 
 file.close()
