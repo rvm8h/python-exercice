@@ -24,7 +24,7 @@ lTypes=[]
 lNumbers=[]
 mydic={}
 for line in open('data.txt'):
-        lTypes.append(line.split(',')[0].replace(' ',''))
+        lTypes.append(line.split(',')[0].rstrip())
         lNumbers.append(int(line.split(',')[1]))
 mydic=dict(zip(lTypes, lNumbers))
 mytuples=[(v, k) for k, v in mydic.items()]
