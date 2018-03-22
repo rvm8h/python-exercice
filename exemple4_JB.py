@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 # ouvrir le fichier data.txt
 # lire les valeurs
 # et mettre les valeurs dans un dictionnaire
