@@ -54,3 +54,66 @@ while b>0:
     b -= 1
     if b%2!=0:print('valeur de b : ', b)
 
+
+
+
+
+
+#Insertion dans un dictionnaire d'un tuple (nom,taille,age)
+def insertDB(name, height, age, dictionnary):
+    tuples=[]
+    d={}
+    record=(name, (height, age))
+    tuples = [(n, data) for n, data in dictionnary.items()]
+    tuples.append(record)
+    tuples.sort()
+    d=dict([(n, data) for n, data in tuples])
+    return d
+
+
+#Recherche dans un dictionnaire d'un tuple (nom,taille,age) par le nom
+def requestDB(name, dictionnary):
+    result=()
+    if len(dictionnary.keys())==0:
+        return ()
+    else:
+        return dictionnary[name]
+    return ()
+
+
+
+#Test des primitives insertDB() et requestDB()
+dic={}
+dic=insertDB('Philippe', 1.75, 24, dic)
+dic=insertDB('Paul', 1.70, 38, dic)
+dic=insertDB('Marc', 1.85, 29, dic)
+print(dic)
+individurecherche = 'Philippe'
+print(individurecherche, ' : ', requestDB(individurecherche, dic))
+
+
+#Boucle d'interaction avec un utilisateur en ligne de commande :
+def interactiveMenu(dico):
+    while 1:
+        print('Taper 0 pour consulter le dictionnaire')
+        print('Taper 1 pour insérer un enregistrement dans le dictionnaire')
+        print('Autre touche pour sortir')
+        choice = input()
+        if int(choice) == 0:
+            print('Entrez le nom recherché :')
+            individurecherche = input()
+            print(individurecherche, ' : ', requestDB(individurecherche, dico))
+        elif int(choice) == 1:
+            print('Entrez le nom a insérer :')
+            name = input()
+            print('Entrez la taille a insérer :')
+            height = input()
+            print('Entrez l\'age a insérer :')
+            age = input()
+            dico = insertDB(name, height, age, dico)
+            print(dico)
+        else: break
+
+
+#Exécution de la boucle interactive avec l'utilisateur
+interactiveMenu(dic)
