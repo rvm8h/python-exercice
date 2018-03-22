@@ -77,10 +77,7 @@ def requestDB(name, dictionnary):
     if len(dictionnary.keys())==0:
         return ()
     else:
-        Ks = list(dictionnary.keys())
-        for key in (Ks):
-            if key == name:
-                return dictionnary[key]
+        return dictionnary[name]
     return ()
 
 
@@ -102,11 +99,11 @@ def interactiveMenu(dico):
         print('Taper 1 pour insérer un enregistrement dans le dictionnaire')
         print('Autre touche pour sortir')
         choice = input()
-        if int(choice) == 1:
+        if int(choice) == 0:
             print('Entrez le nom recherché :')
             individurecherche = input()
             print(individurecherche, ' : ', requestDB(individurecherche, dico))
-        elif int(choice) == 2:
+        elif int(choice) == 1:
             print('Entrez le nom a insérer :')
             name = input()
             print('Entrez la taille a insérer :')
