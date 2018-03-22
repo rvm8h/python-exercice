@@ -92,6 +92,8 @@ individurecherche = 'Philippe'
 print(individurecherche, ' : ', requestDB(individurecherche, dic))
 
 
+
+
 #Boucle d'interaction avec un utilisateur en ligne de commande :
 def interactiveMenu(dico):
     while 1:
@@ -117,3 +119,31 @@ def interactiveMenu(dico):
 
 #Exécution de la boucle interactive avec l'utilisateur
 interactiveMenu(dic)
+
+
+
+
+def presentInList(x, l):
+    for i, e in enumerate(l):
+        if e == x:
+            return True
+    return False
+
+#Fonction retournant dans une liste les caractères commuuns aux deux chaines
+def commonCharacters(string1, string2):
+    if len(string1)<len(string2):
+        listString = list(string1)
+        strAlgo = string2
+    else:
+        listString = list(string2)
+        strAlgo = string1
+    result = []
+    for x in listString:
+        if x in strAlgo:
+            if not presentInList(x, result):
+                result.append(x)
+    return result
+
+
+print(commonCharacters('Adamo', 'Coppola dracula'))
+
