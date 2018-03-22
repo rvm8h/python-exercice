@@ -61,10 +61,27 @@ for x in range(len(lines)):
    for y in range(len(lines[x])):
        lines[x][y] = lines[x][y].replace(" ","")
 
+#filling dictionary
 for x in range(len(lines)):
     Dickus[lines[x][0]] = int(lines[x][1])
 
 
 print('Dictionary:', Dickus , '\nSorted by keys:', sorted(Dickus))
 
+sortval = []
+
+for x in Dickus:
+    sortval.append(Dickus[x])
+
+
+
+for x in range(len(sortval)):
+    for y in range(len(sortval)):
+        if sortval[x] < sortval[y]:
+            a = sortval[x]
+            sortval[x] = sortval[y]
+            sortval[y] = a
+
+
+print('Sorted by value:', sortval)
 file.close()
