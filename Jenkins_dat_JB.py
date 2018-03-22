@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import re
-
 # Ouvrir les deux fichier en mode R et W
 jenkins = open('jenkins.dat', 'r')
 myfile = open('BAIK.ret', 'w')
