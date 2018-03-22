@@ -103,3 +103,50 @@ while b > 0 :
     b -= 1
     if b%2!=0:
         print("Valeur de b : ", b)
+
+# Exercice 4 Mini base de données
+print("\nExercice 4 Mini base de données : \n")
+
+dic = dict()
+
+# Affiche le Dic
+def displayDic(k):
+    if k == "all" :
+        print(dic)
+    else:
+
+        print(dic[k])
+    return
+
+# Remplit le Dic
+def fillDic():
+    print("Fonction d'ajout dans la base")
+    while 1:
+        nom = input("Entrez un nom ou 'q' pour sortir : ")
+        if nom == "" or nom == "q":
+            break
+        else:
+            age = int(input("Entrez un âge : "))
+            taille = float(input("Entrez une taille : "))
+            dic[nom] = age, taille
+            displayDic('all')
+    return
+
+# Recherche dans le Dic
+def searchDic():
+    print("Fonction de recherche dans la base")
+    while 1:
+        nom = input("Entrez le nom de la personne : ")
+        if nom in dic :
+            print("Cette personne est dans la base :")
+            displayDic(nom)
+            break
+        else:
+            print("Cette personne n'est pas dans la base.")
+
+    return
+
+
+fillDic()
+
+searchDic()
