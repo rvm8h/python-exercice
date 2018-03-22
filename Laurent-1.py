@@ -20,7 +20,7 @@ l2=[]
 mydic={}
 #close implicite dans le for
 for line in open('data.txt'):
-        l0.append(line.split(',')[0])
+        l0.append(line.split(',')[0].replace(' ',''))
         l1.append(int(line.split(',')[1]))
 mydic=dict(zip(l0, l1))
 for key in sorted(mydic):
