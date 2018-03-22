@@ -22,8 +22,9 @@ for x in range(len(data)):
 
         if data[x][y].find("WARNING") != -1:
 
-            print("warning found:",str(data[x]).replace("[","").replace("]",""))
-            output.write(str(data[x]).replace("[","").replace("]",""))
+            line = str(data[x]).replace("[","").replace("]","")
+            print("warning found:",line)
+            output.write(line)
 
 
 
