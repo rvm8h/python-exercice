@@ -124,7 +124,7 @@ interactiveMenu(dic)
 
 
 def presentInList(x, l):
-    for i, e in enumerate(l):
+    for e in l:
         if e == x:
             return True
     return False
@@ -147,3 +147,4 @@ def commonCharacters(string1, string2):
 
 print(commonCharacters('Adamo', 'Coppola dracula'))
 
+ 
