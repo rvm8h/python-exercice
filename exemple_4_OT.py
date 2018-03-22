@@ -26,14 +26,14 @@ for matchNum, match in enumerate(matches):
 
     for groupNum in range(0, len(match.groups())):
         if groupNum == 1 :
-            a = match.group(groupNum).strip('\n')
+            a = match.group(groupNum).strip("\n").replace(" ","")
 
         groupNum = groupNum + 1
 
         #print("Group {groupNum} found: {group}".format(groupNum=groupNum, group=match.group(groupNum)))
 
         if groupNum == 2:
-            b = match.group(groupNum).strip(r'\n')
+            b = match.group(groupNum).strip("\n").replace(" ","")
             print('a =',a,',b =',b)
             Dickus[a] = int(b)
 
