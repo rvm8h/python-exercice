@@ -13,6 +13,8 @@ while a < b:
 print("first loop ended successfully\n")
 
 while b != 0:
-    b-= 1
+    b -= 1
     if b % 2 == False:
         print(b)
+
+print("second loop ended successfully\n")
