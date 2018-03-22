@@ -66,22 +66,37 @@ for x in range(len(lines)):
     Dickus[lines[x][0]] = int(lines[x][1])
 
 
-print('Dictionary:', Dickus , '\nSorted by keys:', sorted(Dickus))
 
 sortval = []
-
+sortkey = []
+#retrieving dictionnary values
 for x in Dickus:
     sortval.append(Dickus[x])
+    sortkey.append(x)
 
 
-
+#sort by value
 for x in range(len(sortval)):
+
     for y in range(len(sortval)):
+
         if sortval[x] < sortval[y]:
             a = sortval[x]
+            b = sortkey[x]
             sortval[x] = sortval[y]
             sortval[y] = a
+            sortkey[x] = sortkey[y]
+            sortkey[y] = b
 
+#output
+print('Dictionary:', Dickus, '\nSorted by keys:', sorted(Dickus),'\nSorted by values',sortval)
 
-print('Sorted by value:', sortval)
+print('\nby keys:')
+for x in sorted(Dickus):
+    print(x,'=',Dickus[x])
+
+print('\nby values:')
+for x in range(len(sortval)):
+    print(sortval[x] , '=' , sortkey[x])
+
 file.close()
