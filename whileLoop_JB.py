@@ -13,7 +13,7 @@ while a < b:
 print("\n")
 
 # while n.2
-while b != 0:
+while b != 0 and b:
     b = b - 1
     if b % 2 == 1:
         print("La valeur de b: " + str(b))
