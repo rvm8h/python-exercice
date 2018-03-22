@@ -142,6 +142,7 @@ def searchDic():
             break
         else:
             print("Cette personne n'est pas dans la base.")
+            break
 
     return
 
@@ -149,3 +150,21 @@ def searchDic():
 fillDic()
 
 searchDic()
+
+# Exercice 5 Fonction recherchant les caractères communs à deux chaînes
+print("\nExercice 5 Fonction recherchant les caractères communs à deux chaînes : \n")
+
+s1 = 'SPAM'
+s2 = 'SCAM'
+
+def common(str1,str2):
+
+    common = []
+
+    for x in set(str1):
+        for y in set(str2):
+            if x == y:
+              common.append(x)
+    return common
+
+print('Les caractères communs à', s1, 'et', s2, 'sont :', common(s1,s2))
