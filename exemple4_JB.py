@@ -16,5 +16,6 @@ for i in list:
     newP = p[0].split(' ')
     dict[newP[0]] = int(p[1])
 
+print("Voici le tableau trie par valeur: \n")
 for key in sorted(dict, key=dict.get):
     print(key, '=>', dict[key])
