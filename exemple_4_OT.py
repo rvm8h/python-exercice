@@ -1,6 +1,9 @@
 #ouvrir un fichier data.txt
 #lire les valeurs
 #mettre les valeurs dans un dictionnaire
+
+
+# V1 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #trier le dictionnaire par valeur
 import re
 
@@ -45,6 +48,7 @@ print('Dictionary:',Dickus,'\nSorted Dictionary:',sorted(Dickus),'\n\n')
 file.close()
 
 
+# V2 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #opening input file
 file = open('data.txt', 'r')
 
@@ -100,3 +104,33 @@ for x in range(len(sortval)):
     print(sortval[x] , '=' , sortkey[x])
 
 file.close()
+
+# V3 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#opening input file
+file = open('data.txt', 'r')
+
+#reading input file
+lines = file.readlines()
+
+#dictionary
+Dickus = dict()
+
+#deleting \n
+for x in range(len(lines)):
+   lines[x] = lines[x].strip("\n").split(",")
+
+   for y in range(len(lines[x])):
+       lines[x][y] = lines[x][y].replace(" ","")
+
+#filling dictionary
+for x in range(len(lines)):
+    Dickus[lines[x][0]] = int(lines[x][1])
+
+sortval = [(v,k) for k,v in Dickus.items()]
+
+sortval.sort()
+
+sortval = [(k,v) for v,k in sortval]
+#output
+print('\nDictionary:', Dickus, '\nSorted by keys:', sorted(Dickus),'\nSorted by values',sortval)
