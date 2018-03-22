@@ -52,15 +52,13 @@ print (dic)
 
 file.close()
 
-# Exercise 2
-
+# Exercise 2 Création de fichier avec uniquement des WARNING
+lst=[]
 file = open('jenkins.dat', 'r')
 lines = file.readlines()
-print(lines)
-file.close()
-
-file = open('lorenzo.ret', 'w')
-file.write('test')
-
-file.close()
-
+for line in lines:
+    if "WARNING" in line:
+        lst.append(line)
+out = open('lorenzo.ret', 'w')
+out.writelines(lst)
+out.close()
