@@ -21,7 +21,8 @@ with open("email.txt","r") as mail:
             LContacts.append(zip(header,l.rstrip().split(",")))
             LContactsL.append(set(zip(header,l.rstrip().split(","))))
 
-    print(LContacts,'\n',LContactsL)
+    print(LContacts,'\n',LContactsL[0])
     for l in LContacts:
         H,F = zip(*l)
         print("email:" , F[2] , "--" , F[1], F[0])
+
