@@ -161,12 +161,11 @@ def loadEmails(file):
         for i in range(linesNumber):
             lColsForCurrentLine=[]
             for j in range(columnsNumber + 1):
-                lColsForCurrentLine.append( {lTypes[j]: content[i].split(',')[j].rstrip()} )
+                lColsForCurrentLine.append( content[i].split(',')[j].rstrip() )
             lLines.append(lColsForCurrentLine)
-        print(lLines)
-        # lColumns=[]
-        # for j in range(columnsNumber + 1):
-        #     lColumns.append([lLines[i][j] for i in range(linesNumber)])
-        # print(lColumns)
+        lDic=[]
+        for i in range(linesNumber):
+            lDic.append(dict(zip(lTypes, lLines[i])))
+        return lDic
 
-loadEmails('email.txt')
+print(loadEmails('email.txt'))
