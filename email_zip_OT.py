@@ -12,14 +12,16 @@
 
 with open("email.txt","r") as mail:
     LContacts = list()
+    LContactsL = list()
     list = mail.readlines()
     header = list[0].rstrip().split(",")
     print(header)
     for l in list:
         if "first" not in l:
             LContacts.append(zip(header,l.rstrip().split(",")))
+            LContactsL.append(set(zip(header,l.rstrip().split(","))))
 
-    print(LContacts)
+    print(LContacts,'\n',LContactsL)
     for l in LContacts:
         H,F = zip(*l)
         print("email:" , F[2] , "--" , F[1], F[0])
