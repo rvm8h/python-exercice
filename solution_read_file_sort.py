@@ -4,7 +4,7 @@
 # trier le dictionnaire par valeur
 
 dictionnary= {}
-f = open("data.txt",'r')
+f = open("data.txt", 'r')
 
 lines = f.readlines()     # lit toutes les lignes d'un coup
 print(lines)

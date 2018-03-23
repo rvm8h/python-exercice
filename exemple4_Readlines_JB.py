@@ -15,9 +15,11 @@ print("Tableau sans tri: ")
 print(dict)
 print("\n")
 
+# tri sur les valeurs
 t = [(v, k) for k, v in dict.items()]
 t.sort()
 
 print("Tableau trié par valeur: ")
 t = [(k, v) for v, k in t]
 print(t)
+
