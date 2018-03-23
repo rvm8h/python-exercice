@@ -37,16 +37,13 @@ print('Dictionnaire trié par quantités : ', mydic)
 #Création d'un fichier ne contenant que les chaines WARNING du fichier jenkins.dat
 l=[]
 with open('jenkins.dat', 'r', encoding='utf-8') as fIn:
-    for line in fIn.readlines():
-        if "WARNING" in line:
-            l.append(line)
+    l = (line for line in fIn.readlines() if "WARNING" in line)
 with open('laurent.ret', 'w', encoding='utf-8') as fOut:
     fOut.writelines(l)
 
 
 #Boucles
-a=0
-b=10
+a, b= 0, 10
 while a<b:
     print('valeur de a :', a)
     a += 1
@@ -63,7 +60,7 @@ while b>0:
 def insertDB(name, height, age, dictionnary):
     tuples=[]
     d={}
-    record=(name, (height, age))
+    record=(name, (float(height), int(age)))
     tuples = [(n, data) for n, data in dictionnary.items()]
     tuples.append(record)
     tuples.sort()
@@ -114,11 +111,11 @@ def interactiveMenu(dico):
             age = input()
             dico = insertDB(name, height, age, dico)
             print(dico)
-        else: break
-
+        else:break
+    return dico
 
 #Exécution de la boucle interactive avec l'utilisateur
-interactiveMenu(dic)
+dic = interactiveMenu(dic)
 
 
 
@@ -129,7 +126,7 @@ def presentInList(x, l):
             return True
     return False
 
-#Fonction retournant dans une liste les caractères commuuns aux deux chaines
+#Fonction retournant dans une liste les caractères communs aux deux chaines
 def commonCharacters(string1, string2):
     if len(string1)<len(string2):
         listString = list(string1)
