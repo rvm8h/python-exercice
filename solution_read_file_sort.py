@@ -15,14 +15,11 @@ for l in lines:
     items[0]=items[0].replace(" ","")
     dictionnary[items[0]]=int(items[1])  # assigne les valeurs, converties en int,  au dictionnaire,
 
-# tri par sur les keys
+# tri sur les keys
 for t in sorted(dictionnary):
     print (t, ' =>', dictionnary[t])
 #print(dictionnary)
 
-# tri sur les valeurs
-#for t in sorted(dictionnary.values()):
-#    print (t)
 
 # tri sur les valeurs
 t = [(v, k) for k, v in dictionnary.items()]
@@ -37,3 +34,8 @@ from operator import itemgetter
 
 a = sorted(dictionnary.items(), key=itemgetter(1))
 print(a)
+
+# tri sur les valeurs
+mysorted = sorted(dictionnary, key=dictionnary.get)
+for t in mysorted:
+    print (t, ' =>', dictionnary[t])
