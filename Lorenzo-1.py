@@ -176,21 +176,20 @@ def common(str1, str2):
 print('Les caractères communs à', s1, 'et', s2, 'sont :', common(s1, s2))
 
 # Exercice 6 Structure de données avec la fonction zip
-# email: <value>  --  lastname ,  firstname
+print("\nExercice 6 Structure de données avec la fonction zip : \n")
 
-emailFile = "email.txt"
-addedLines = []
-headers = []
-lines = []
+file = open("email.txt", "r")
+firsLine = file.readline()
+headers = firsLine.rstrip().split(',')
+otherLines = file.readlines()
 contacts = []
 
-with open("email.txt", "r") as infile:
-    lines = infile.readlines()
-    headers = contacts[0].rstrip().split(',')
-    print(headers)
+for line in otherLines:
+    contactFields = line.rstrip().split(',')
+    dic = {}
+    for h, f in zip(headers, contactFields):
+        dic[h] = f
+    contacts.append(dic)
+    print('email:', dic['email'], '--', dic['last'], ',', dic['first'])
 
-    print(contacts)
-    for line in lines:
-        if 'first' not in line:
-            contacts.append(zip(headers, line.rstrip().split(',')))
-    print(contacts)
+print(contacts)
