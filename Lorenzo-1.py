@@ -180,8 +180,9 @@ print("\nExercice 6 Structure de données avec la fonction zip : \n")
 
 file = open("email.txt", "r")
 firsLine = file.readline()
-headers = firsLine.rstrip().split(',')
 otherLines = file.readlines()
+file.close()
+headers = firsLine.rstrip().split(',')
 contacts = []
 
 for line in otherLines:
