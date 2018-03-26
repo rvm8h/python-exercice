@@ -149,6 +149,7 @@ print(commonCharacters('Adamo', 'Coppola dracula'))
 
 #Charger un fichier contenant des noms et des e-mails
 def loadEmails(file):
+    lDic = []
     lTypes=[]
     with open(file, 'r', encoding='utf-8') as fIn:
         header=fIn.readline()
@@ -161,12 +162,10 @@ def loadEmails(file):
         for i in range(linesNumber):
             lColsForCurrentLine=[]
             for j in range(columnsNumber + 1):
-                lColsForCurrentLine.append( {lTypes[j]: content[i].split(',')[j].rstrip()} )
+                lColsForCurrentLine.append( content[i].split(',')[j].rstrip() )
             lLines.append(lColsForCurrentLine)
-        print(lLines)
-        # lColumns=[]
-        # for j in range(columnsNumber + 1):
-        #     lColumns.append([lLines[i][j] for i in range(linesNumber)])
-        # print(lColumns)
+        for i in range(linesNumber):
+            lDic.append(dict(zip(lTypes, lLines[i])))
+    return lDic
 
-loadEmails('email.txt')
+print(loadEmails('email.txt'))
