@@ -36,3 +36,8 @@ Example of div tag with class identical
 soup = BeautifulSoup(html_identical, "html.parser")
 identical_div = soup.find("div", class_="identical")
 print(identical_div)
+
+with open("ecologicalpyramid.html") as ecological_pyramid:
+    soup = BeautifulSoup(ecological_pyramid, "html.parser")
+producer_entries = soup.find("ul")
+print(producer_entries.li.div.string)
