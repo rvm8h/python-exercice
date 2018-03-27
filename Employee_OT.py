@@ -6,7 +6,7 @@
 
 
 
-class employee():
+class employee:
 
     CountEmployee = 0
 
