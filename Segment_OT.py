@@ -34,4 +34,4 @@ class Segment:
 
 x = Segment(1,2,3,4)
 x.display()
-x.__str__()
+print(x)
