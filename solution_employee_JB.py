@@ -5,7 +5,8 @@
 # creer une methode display qui affiche un employee
 
 
-class Employee(object):
+
+class Employee:
     count = 0
     deleteCount = 0
 
