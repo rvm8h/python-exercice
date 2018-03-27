@@ -8,15 +8,15 @@ class Employee:
     empCount = 0
 
     def __init__(self, name, salary):
-        self.Name = name
-        self.Salary = salary
+        self.name = name
+        self.salary = salary
         Employee.empCount += 1
 
     def displayEmployee(self):
-        print("Nom :", self.Name, ", Salaire :", self.Salary)
+        print("Nom :", self.name, ", Salaire :", self.salary)
 
     def displaycount(self):
-        print("Total employees 2 =", Employee.empCount)
+        print("Total employees par displaycount = {}".format(self.empCount))
 
 
 emp1 = Employee("Lorenzo", 35)
@@ -27,6 +27,6 @@ emp1.displayEmployee()
 emp2.displayEmployee()
 emp3.displayEmployee()
 
-print("Total employees 1 = {}".format(Employee.empCount))
+print("Total employees = {}".format(Employee.empCount))
 
 print(emp1.displaycount())
