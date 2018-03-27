@@ -27,3 +27,5 @@ a.display()
 b = Employee('Riri', 250)
 b.displaycount()
 b.display()
+
+print(Employee.nEmployee)
