@@ -31,7 +31,6 @@ print(type(atags))
 
 for link in atags:
     print(link.string)
-
 ptag = soup.p
 print(ptag)
 
