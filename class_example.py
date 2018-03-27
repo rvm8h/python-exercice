@@ -14,6 +14,14 @@ y.setdata(3.1415)
 x.display()
 y.display()
 
+<<<<<<< HEAD
+
+class SecondClass(FirstClass):
+    def display(self):
+        print("current value : {}".format(self.data))
+
+z = SecondClass()
+=======
 class SecondClass(FirstClass):
     def display(self):
         print("Current value : {}".format(self.data))
@@ -21,6 +29,7 @@ class SecondClass(FirstClass):
 
 z = SecondClass()
 
+>>>>>>> 6e539344271fa91285870851b917bccea507f2ba
 z.setdata(456)
 z.display()
 
@@ -36,6 +45,13 @@ class ThirdClass(SecondClass):
 
 a = ThirdClass('abc')
 a.display()
+<<<<<<< HEAD
+print(a)
+
+b = a + 'xyz'
+b.display()
+print(b)
+=======
 # Le print correspond à str
 print(a)
 
@@ -44,3 +60,4 @@ b = a + 'xyz'
 b.display()
 print(b)
 
+>>>>>>> 6e539344271fa91285870851b917bccea507f2ba
