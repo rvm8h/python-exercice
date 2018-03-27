@@ -16,8 +16,8 @@ class Employee:
         print("Nom :", self.name, ", Salaire :", self.salary)
 
     def displaycount(self):
-        print("Total employees par displaycount = {}".format(self.empCount))
-
+        txt = "Total employees par displaycount = {}"
+        return txt.format(self.empCount)
 
 emp1 = Employee("Lorenzo", 35)
 emp2 = Employee("Laurent", 30)
