@@ -12,11 +12,23 @@ class Rectangle:
         self.nom = "rectangle"
 
     def __str__(self):
-        return 'Longueur du {} = {}, Largeur = {}, Surface = {}'.format(self.nom, self.long, self.larg, self.surface())
+        return 'Le {} de cotes {} et {} a une surface de {}'.format(self.nom, self.long, self.larg, self.surface())
 
     def surface(self):
         return self.long*self.larg
 
+class Carre(Rectangle):
 
-x=Rectangle(5,10)
-print(x)
+    def __init__(self, cote = 0):
+        #super().__init__(cote, cote)
+        Rectangle.__init__(self, cote, cote)
+        self.nom = "carre"
+
+rectangle=Rectangle(5,10)
+print(rectangle)
+# x.larg = 7
+# print(x.surface())
+
+carre = Carre(5)
+print(carre)
+carre.surface()
