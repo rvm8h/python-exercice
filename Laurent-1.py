@@ -171,5 +171,9 @@ def loadEmails(file):
 
 contacts=loadEmails('email.txt')
 print(contacts)
+print(*contacts)
 for contact in contacts:
+    print(contact)
+    print(*contact)
+    print(contact['email'])
     print("email: {email} -- {last}, {first}".format(**contact))
