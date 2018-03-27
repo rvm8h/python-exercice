@@ -23,8 +23,7 @@ a.display()
 
 class Carre(Rectangle):
     def __init__(self, cote=0):
-        self.long = cote
-        self.larg = cote
+        super().__init__(cote, cote)
         self.name = 'Square'
 
 b = Carre(7)
