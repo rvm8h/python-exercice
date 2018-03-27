@@ -8,8 +8,9 @@ class Rectangle:
     def __init__(self, long=0, larg=0):
         self.long = long
         self.larg = larg
+        self.name = 'Rectangle'
     def __str__(self):
-        return '[Rectangle[long : {}, long : {}, surface : {} ]]'.format(self.long, self.larg, self.surface())
+        return '[{}[long : {}, long : {}, surface : {} ]]'.format(self.name, self.long, self.larg, self.surface())
     def surface(self):
         return self.long*self.larg
     def display(self):
@@ -24,6 +25,7 @@ class Carre(Rectangle):
     def __init__(self, cote=0):
         self.long = cote
         self.larg = cote
+        self.name = 'Square'
 
 b = Carre(7)
 print(b)
