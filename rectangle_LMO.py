@@ -18,3 +18,13 @@ class Rectangle:
 a = Rectangle(4,3)
 print(a)
 a.display()
+
+
+class Carre(Rectangle):
+    def __init__(self, cote=0):
+        self.long = cote
+        self.larg = cote
+
+b = Carre(7)
+print(b)
+b.display()
