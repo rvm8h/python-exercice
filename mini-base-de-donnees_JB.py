@@ -23,7 +23,7 @@ def input_dict():
     print("The data has been updated: ")
     print(data)
 
-# fonction consultation avec un parametre name
+# fonction consultation
 def view_dict():
     print("Search by name: ")
     name = input()
