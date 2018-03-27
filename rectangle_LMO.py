@@ -10,11 +10,11 @@ class Rectangle:
         self.larg = larg
         self.name = 'Rectangle'
     def __str__(self):
-        return '[{}[long : {}, long : {}, surface : {} ]]'.format(self.name, self.long, self.larg, self.surface())
+        return '[long : {} , larg : {} , surface : {} ]'.format(self.name, self.long, self.larg, self.surface())
     def surface(self):
         return self.long*self.larg
     def display(self):
-        print('long : ', self.long, ', larg : ', self.long, ', surface : ', self.surface())
+        print(self.name, ': [long :', self.long, ', larg :', self.larg, ', surface :', self.surface(), ']')
 
 a = Rectangle(4,3)
 print(a)
@@ -29,3 +29,4 @@ class Carre(Rectangle):
 b = Carre(7)
 print(b)
 b.display()
+
