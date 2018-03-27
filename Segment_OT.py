@@ -13,7 +13,7 @@ class Point:
         self.y = y
 
     def display(self):
-        return self.x, self.y
+        return "Point de coordonnée: x = {} et y = {}".format(self.x, self.y)
 
 
 class Segment:
@@ -23,14 +23,11 @@ class Segment:
         self.extrem = Point(x2,y2)
 
     def display(self):
-        print ("a = x : {}, y : {} et b = x : {}, y : {}".format(self.orig.display()[0], self.orig.display()[1],
-                                                                 self.extrem.display()[0], self.extrem.display()[1]))
+        print ("a = x : {}, y : {} et b = x : {}, y : {}".format(self.orig.x, self.orig.y, self.extrem.x, self.extrem.y))
 
     def __str__(self):
-        return "Segment de point a = x : {}, y : {} et b = x : {}, y : {}".format(self.orig.display()[0],
-                                                                                 self.orig.display()[1],
-                                                                                 self.extrem.display()[0],
-                                                                                 self.extrem.display()[1])
+        return "Segment de point a = x : {}, y : {} et b = x : {}, y : {}".format(self.orig.x,self.orig.y,self.extrem.x,
+                                                                                 self.extrem.y)
 
 x = Segment(1,2,3,4)
 x.display()
