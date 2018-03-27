@@ -6,7 +6,11 @@
 
 
 
+<<<<<<< HEAD
 class employee:
+=======
+class employee():
+>>>>>>> origin/Olivier
 
     CountEmployee = 0
 
