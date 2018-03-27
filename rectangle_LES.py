@@ -1,16 +1,22 @@
+# creer une class Retangle
+# prend 2 parameters long , larg , par default  = 0
+# une methode surface
+# une methode __str__ pour l 'affichage avec
+# ces caracteriques lon , larg ,surface
 
 class Rectangle:
 
     def __init__(self, long = 0, larg = 0):
         self.long = long
         self.larg = larg
+        self.nom = "rectangle"
 
     def __str__(self):
-        return 'Longueur du rectangle = {}, Largeur = {}, Surface = {}'.format(self.long, self.larg, self.surface())
+        return 'Longueur du {} = {}, Largeur = {}, Surface = {}'.format(self.nom, self.long, self.larg, self.surface())
 
     def surface(self):
         return self.long*self.larg
 
 
-x=Rectangle(2,5)
+x=Rectangle(5,10)
 print(x)
