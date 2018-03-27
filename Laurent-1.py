@@ -153,7 +153,7 @@ def loadEmails(file):
     lTypes=[]
     with open(file, 'r', encoding='utf-8') as fIn:
         header=fIn.readline()
-        columnsNumber = list(header).count(',')
+        columnsNumber = header.count(',')
         for i in range(columnsNumber+1):
             lTypes.append(header.split(',')[i].rstrip())
         content=fIn.readlines()
@@ -168,4 +168,12 @@ def loadEmails(file):
             lDic.append(dict(zip(lTypes, lLines[i])))
     return lDic
 
-print(loadEmails('email.txt'))
+
+contacts=loadEmails('email.txt')
+print(contacts)
+print(*contacts)
+for contact in contacts:
+    print(contact)
+    print(*contact)
+    print(contact['email'])
+    print("email: {email} -- {last}, {first}".format(**contact))
