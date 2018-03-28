@@ -14,5 +14,5 @@ for soup_line in soup_table.findAll('tr'):
         for soup_station in soup_case.findAll('a'):
             if((indice == 0 or indice ==3) and not soup_station.string == None):
                 print(soup_station.string)
-indice+=1
+        indice+= 1
 
