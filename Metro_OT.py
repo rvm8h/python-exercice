@@ -12,14 +12,14 @@ response = requests.get(url)
 print(response.encoding)
 soup_page = BeautifulSoup(response.content,"html.parser")
 #print(soup_page)
-search_lines = soup_page.find_all(["table","td","a"])
+search_lines = soup_page.find_all(["table","tb","a"])
+#print(search_lines)
 
 boolean = False
 
 for v in search_lines:
 
     if  v.get("class") != None and "wikitable" in v.get("class"):
-        print(v.get("class"))
         boolean = True
 
     if v.has_attr("title") and "(Paris Métro)" in v.get("title") and boolean:
