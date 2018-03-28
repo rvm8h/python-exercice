@@ -21,7 +21,7 @@ for t in sorted(dictionnary):
 #print(dictionnary)
 
 
-# tri sur les valeurs
+
 t = [(v, k) for k, v in dictionnary.items()]
 t.sort()
 t= [(k, v) for v, k in t]
