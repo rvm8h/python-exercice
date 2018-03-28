@@ -20,7 +20,8 @@ for soup_line in soup_table.findAll('tr'):
             if(indice ==3):
                 linelist.append(soup_station.string)
         indice += 1
-    tmp = [station, linelist]
-    data.append(tmp)
+    if not station == "":
+        tmp = [station, linelist]
+        data.append(tmp)
 
 print(data)
