@@ -15,8 +15,8 @@ pages = soup_page.find_all(['th', 'tr'])
 
 for page in pages:
 	metro = page.find(title=re.compile("(Paris Métro)"), href=re.compile("_\(Paris_M%C3%A9tro\)"))
-	line = page.find(title=re.compile("Paris Métro Line"), href=re.compile("/Paris_M%C3%A9tro_Line"))
-	if metro != None and line != None:
+	lines = page.find_all(title=re.compile("Paris Métro Line"), href=re.compile("/Paris_M%C3%A9tro_Line"))
+	if metro != None and lines != None:
 		station = metro.contents[0]
-		number = line.contents[0]
+		number = [",".join(line.contents) for line in lines]
 		print("station: {}, Line: {}".format(station, number))
