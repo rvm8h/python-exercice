@@ -10,11 +10,9 @@ response = requests.get(url)
 soup = BeautifulSoup(response.content, "html.parser")
 
 table = soup.find('table')
-
 #print(table)
 
 for tr in table.findAll('tr'):
-
     for td in tr.findAll('td')[::3]:
         for a in td.findAll('a'):
             print(a.text)
