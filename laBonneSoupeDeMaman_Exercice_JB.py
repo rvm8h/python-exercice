@@ -14,8 +14,6 @@ soup_page = BeautifulSoup(response.content, "html.parser")
 pages = soup_page.find_all(['th', 'tr'])
 
 for page in pages:
-	station = ''
-	number = 0
 	metro = page.find(title=re.compile("(Paris Métro)"), href=re.compile("_\(Paris_M%C3%A9tro\)"))
 	line = page.find(title=re.compile("Paris Métro Line"), href=re.compile("/Paris_M%C3%A9tro_Line"))
 	if metro != None and line != None:
