@@ -9,11 +9,16 @@ url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
 
 response = requests.get(url)
 soup_page = BeautifulSoup(response.content,"html.parser")
-search_entries = soup_page.findAll("th")
+search_entries = soup_page.find_all("th")
 
-print(search_entries)
+
+#print("Search entries:\n",search_entries)
+
+#print(search_entries.th.string)
 
 for v in search_entries:
-    print(v.th.ul.li.string)
+
+    print("V = ",v)
+    print(v.string)
 
 
