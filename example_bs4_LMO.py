@@ -81,15 +81,6 @@ print(all_texts_in_list)
 # print(css_class)
 
 
-# url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
-# response = requests.get(url)
-# soup_page = BeautifulSoup(response.content,"html.parser")
-# soup_table = soup_page.find('table')
-# for soup_case in soup_table.findAll('td'):
-#     for soup_station in soup_case.findAll('a'):
-#         if soup_station.has_attr('href') and soup_station.has_attr('title'):
-#             if("arrondissement" not in soup_station.get('title') and not soup_station.string == None):
-#                 print(soup_station.string)
 
 
 url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
