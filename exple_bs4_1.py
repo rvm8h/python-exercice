@@ -29,14 +29,14 @@ print(atag)
 
 url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
 response = requests.get(url)
-soup_page= BeautifulSoup(response.content,"html parser")
+soup_page= BeautifulSoup(response.content,"html.parser")
 print(soup_page)
 
 tag_th=soup_page.find_all('th')
 print(tag_th)
 
 with open("ecologicalpyramid.html") as ecological_pyramid:
- soup = BeautifulSoup(ecological_pyramid,"html.paser")
+ soup = BeautifulSoup(ecological_pyramid,"html.parser")
 produce_stories = soup.find_all("ul")
 print(produce_stories.li.div.string)
 search = soup.find_all(text="fo")
