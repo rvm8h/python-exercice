@@ -1,8 +1,12 @@
 #!/usr/bin/env python
-
+from itertools import islice
 li = []
 file = 'email.txt'
 
 with open(file) as infile:
+    key = []
     line = infile.read().split('\n')
-    print(line[0])
+    st = line[0].split(',')
+    print(st)
+    print(infile.readlines()[1:])
+

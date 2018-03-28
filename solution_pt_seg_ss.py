@@ -14,8 +14,10 @@ class Point():
 
 
 class Segment():
-    def __init__(self, origin, extrem, origne , extreme ):
-        self.x=origin
-        self.y = extrem
-        self.x = origne
-        self.y= extreme
+
+
+
+    def __init__(self, origin, extrem, ):
+        self.origin=origin
+        self.extrem= extrem
+

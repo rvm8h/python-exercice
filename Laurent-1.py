@@ -115,7 +115,7 @@ def interactiveMenu(dico):
     return dico
 
 #Exécution de la boucle interactive avec l'utilisateur
-dic = interactiveMenu(dic)
+#dic = interactiveMenu(dic)
 
 
 
@@ -144,4 +144,36 @@ def commonCharacters(string1, string2):
 
 print(commonCharacters('Adamo', 'Coppola dracula'))
 
- 
+
+
+
+#Charger un fichier contenant des noms et des e-mails
+def loadEmails(file):
+    lDic = []
+    lTypes=[]
+    with open(file, 'r', encoding='utf-8') as fIn:
+        header=fIn.readline()
+        columnsNumber = header.count(',')
+        for i in range(columnsNumber+1):
+            lTypes.append(header.split(',')[i].rstrip())
+        content=fIn.readlines()
+        linesNumber = len(content)
+        lLines=[]
+        for i in range(linesNumber):
+            lColsForCurrentLine=[]
+            for j in range(columnsNumber + 1):
+                lColsForCurrentLine.append( content[i].split(',')[j].rstrip() )
+            lLines.append(lColsForCurrentLine)
+        for i in range(linesNumber):
+            lDic.append(dict(zip(lTypes, lLines[i])))
+    return lDic
+
+
+contacts=loadEmails('email.txt')
+print(contacts)
+print(*contacts)
+for contact in contacts:
+    print(contact)
+    print(*contact)
+    print(contact['email'])
+    print("email: {email} -- {last}, {first}".format(**contact))
