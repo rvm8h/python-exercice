@@ -54,13 +54,31 @@ print(css_class)
 #Est équivalent à (attention c'est "class_", parce que le mot "class" est réservé en Python)
 css_class = soup.findAll(class_="primaryconsumerlist")
 print(css_class)
+print(type(css_class))
 
 def is_secondary_consumer(tag):
     return tag.has_attr("id") and tag.get("id") == "secondaryconsumers"
 
 secondary_consumers = soup.find(is_secondary_consumer)
+print(type(secondary_consumers))
 for producer_entry in secondary_consumers.findAll(attrs={"class": "name"}):
     print(producer_entry.string)
+
+
+all_texts = soup.find_all(text=True)
+print(all_texts)
+
+all_texts_in_list = soup.find_all(text=["plants", "algae"])
+print(all_texts_in_list)
+
+# div_li_tags = soup.find_all(["div", "li"])
+# print(div_li_tags)
+
+div_li_tags = soup.find_all(["div", "li"], recursive=True)
+print(div_li_tags)
+
+css_class = soup.findAll(["producerlist", "primaryconsumerlist", "secondaryconsumerlist", "tertiaryconsumerlist"])
+print(css_class)
 
 
 
