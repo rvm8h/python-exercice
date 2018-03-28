@@ -51,6 +51,10 @@ t = soup.findAll("ul")
 for v in t:
     print(v.li.div.string)
 
+tag_li = soup.find("li")
+print(type(tag_li))
+search = soup.find(text = 'fox')
+print(search)
 
-#Trouver tout les tag th dans le site web
-#url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
+css_class = soup.find(attrs={'class': "primaryconsumerlist"})
+print(css_class)
