@@ -47,11 +47,27 @@ with open("ecologicalpyramid.html") as ecological_pyramid:
 for producer_entry in soup.findAll("ul"):
     print(producer_entry.li.div.string)
 
+search=soup.find(text='fox')
+print(search)
+css_class = soup.findAll(attrs={"class": "primaryconsumerlist"})
+print(css_class)
+#Est équivalent à (attention c'est "class_", parce que le mot "class" est réservé en Python)
+css_class = soup.findAll(class_="primaryconsumerlist")
+print(css_class)
+
+def is_secondary_consumer(tag):
+    return tag.has_attr("id") and tag.get("id") == "secondaryconsumers"
+
+secondary_consumers = soup.find(is_secondary_consumer)
+for producer_entry in secondary_consumers.findAll(attrs={"class": "name"}):
+    print(producer_entry.string)
 
 
-url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
-response = requests.get(url)
-soup_page = BeautifulSoup(response.content,"html.parser")
-for soup_line in soup_page.findAll('th'):
-    print(soup_line.string)
+
+# url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
+# response = requests.get(url)
+# soup_page = BeautifulSoup(response.content,"html.parser")
+# for soup_line in soup_page.findAll('th'):
+#     print(soup_line.string)
+
 
