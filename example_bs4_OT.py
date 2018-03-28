@@ -12,9 +12,9 @@ response = requests.get(url)
 soup_page = BeautifulSoup(response.content,"html.parser")
 #print(soup_page)
 
-with open("foo.html") as foo_file:
-	soup = BeautifulSoup(foo_file, "html.parser")
-print(soup)
+#with open("foo.html") as foo_file:
+#	soup = BeautifulSoup(foo_file, "html.parser")
+#print(soup)
 
 
 html_atag = """<html><body><p>Test html a tag example</p>
@@ -57,4 +57,15 @@ search = soup.find(text = 'fox')
 print(search)
 
 css_class = soup.find(attrs={'class': "primaryconsumerlist"})
-print(css_class)
+print("CSS :",css_class)
+
+def is_secondary_consumers(tag):
+    return tag.has_attr("id") and tag.get("id") == "secondaryconsumers"
+
+secondary_consumers = soup.find(is_secondary_consumers)
+print("test \n",secondary_consumers)
+
+
+for v in secondary_consumers.find_all('div'):
+    print("V:",v)
+    if v != "" : print("Secondary consumers: ",v.string)
