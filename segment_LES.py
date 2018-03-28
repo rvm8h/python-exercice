@@ -27,10 +27,9 @@ class Segment():
         print("L'origine est ({}), la fin est ({})".format(self.origin.display(), self.end.display()))
 
 
-
 origin = Point(1, 2)
 end = Point(3, 4)
-
 segment = Segment(origin, end)
+
 segment.display()
 print(segment)

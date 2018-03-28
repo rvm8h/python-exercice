@@ -39,4 +39,3 @@ z = carre(2)
 print(x)
 print(y)
 print(z)
-

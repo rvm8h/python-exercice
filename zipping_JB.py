@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 from itertools import islice
-li = []
+contacts = []
 file = 'email.txt'
 
 with open(file) as infile:
-    key = []
-    line = infile.read().split('\n')
-    st = line[0].split(',')
-    print(st)
-    print(infile.readlines()[1:])
+    header = infile.readline().strip().split('\n')
+    for line in infile:
+        line = line.strip().split('\n')
+        contacts_map = zip(header, line)
+        contacts.append(dict(contacts_map))
+
+print(contacts)
+for contact in contacts:
+    print("email: {email} -- {last}, {first}".format(**contact))
 

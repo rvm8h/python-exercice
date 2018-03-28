@@ -20,16 +20,22 @@ class Point:
         self.y = float(y)
 
     def __str__(self):
-        print("X: {}, Y: {}".format(str(self.x), str(self.y)))
+        return "X: {}, Y: {}".format(self.x, self.y)
+
+    def display(self):
+        print("Point : X({}), Y({})".format(self.x, self.y))
 
 
 class Segment(Point):
-    def __init__(self, orig, extrem):
-        self.orig = Point.__init__()
-        self.extrem = Point.__init__()
+    def __init__(self, x1, y1, x2, y2):
+        self.orig = Point(x1, y1)
+        self.extreme = Point(x2, y2)
 
     def __str__(self):
-        print("Origin ({}, {}) , Extreme({}, {})".format(str(self.orig.x), str(self.orig.y), str(self.extrem.x), str(self.extrem.y)))
+        return "a({}, {}), b({}, {})".format(self.orig.x, self.orig.y, self.extreme.x, self.extreme.y)
+
+    def display(self):
+        print("Segment: Origin ({}, {}) , Extreme({}, {})".format(self.orig.x, self.orig.y, self.extreme.x, self.extreme.y))
 
 
 a = Point(1, 2)
@@ -37,6 +43,13 @@ b = Point(3, 4)
 
 print(a)
 print(b)
+
+a.display()
+b.display()
+
+seg = Segment(1, 2, 3, 4)
+print(seg)
+seg.display()
 
 
 

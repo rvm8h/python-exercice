@@ -12,7 +12,7 @@
 contacts = []
 with open('email.txt') as file:
     header = file.readline().strip().split(',')
-    for line  in file:
+    for line in file:
         line = line.strip().split(',')
         contact_map = zip(header, line)
         contacts.append(dict(contact_map))
