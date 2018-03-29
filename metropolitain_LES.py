@@ -10,9 +10,21 @@ response = requests.get(url)
 soup = BeautifulSoup(response.content, "html.parser")
 
 table = soup.find('table')
-#print(table)
+# print(table)
+
+data = []
 
 for tr in table.findAll('tr'):
+    index = 0
+    station = ""
+    lignes = []
+
     for td in tr.findAll('td')[::3]:
         for a in td.findAll('a'):
-            print(a.text)
+            if index == 0:
+                station = a.text
+            else:
+                lignes.append(a.text)
+        index += 1
+    data.append([station, lignes])
+print(data)
