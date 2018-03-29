@@ -18,7 +18,6 @@ for tr in table.findAll('tr'):
     index = 0
     station = ""
     lignes = []
-
     for td in tr.findAll('td')[::3]:
         for a in td.findAll('a'):
             if index == 0:
