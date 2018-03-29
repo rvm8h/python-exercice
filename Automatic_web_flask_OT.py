@@ -8,14 +8,15 @@ subprocess.call("ssh bibi@<VM IP address>")
 subprocess.call('bibi_mdp')
 
 #installation diverses
-subprocess.call('yum -y install net-tools')
-subprocess.call('yum -y update')
+subprocess.call(['yum', '-y', 'install net-tools'])
+subprocess.call(['yum', '-y', 'update'])
+
 if os.popen('rpm -qa kernel |sort -V |tail -n 1').read() != os.popen('uname -r').read(): os.popen('reboot')
-subprocess.call("sudo yum -y install lsof")
-subprocess.call("sudo yum -y install elinks")
+subprocess.call(["sudo yum", "-y", "install lsof"])
+subprocess.call(["sudo yum", "-y", "install elinks"])
 
 #installation de git
-subprocess.call('sudo yum -y install git')
+subprocess.call(['sudo yum', '-y', 'install git'])
 
 print(os.popen("git --version").read())
 
