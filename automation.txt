@@ -1,0 +1,46 @@
+1.Installation de git
+        sudo yum -y install net-tools
+        sudo yum -y install git
+                ou installer manuellement la derniere version si la version de git n est pas a jour
+                sudo yum -y install wget
+                sudo yum -y install "@Development"
+                sudo yum -y install epel-release
+                wget https://github.com/git/git/archive/v2.16.3.tar.gz
+                tar -zxvf v.2.16.3.tar.gz
+                cd git-2.16.3
+                sudo yum -y install dh-autoreconf curl-devel expat-devel gettext-devel openssl-devel pe$
+                sudo yum -y install asciidoc xmlto docbook2X getoptsudo
+                ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+                make configure
+                ./configure --prefix=/usr
+                make -j$(nproc) all doc info
+                make test
+                sudo make install install-doc install-html install-info
+                git --version
+        sudo yum -y update
+
+2.Installation de python3 + pip3
+        sudo yum -y install yum-utils
+        sudo yum -y groupinstall development
+        sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+        sudo yum -y install python36u
+        tester la version
+                python3.6 -V
+        sudo yum -y install python36u-pip
+        sudo pip3.6 install flask
+        sudo pip3.6 install requests
+        sudo yum -y install python36u-devel
+
+3.Ouvrir le firewall sur le port 5000
+        sudo firewall-cmd --zone=public --add-port=5000/tcp
+
+4.Installer lsof et elinks
+        sudo yum -y install lsof && sudo yum -y install elinks
+
+5.git clone le code
+        git clone addressDeRepo
+        cd python-exercice
+        python3.6 web-flask.py runserver
+
+        tester la page sur une autre machine:
+        curl -Is http://ipDelaMachine | head -n 1
