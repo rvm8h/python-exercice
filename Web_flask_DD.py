@@ -28,7 +28,7 @@ def page_not_found(err):
     return render_template('tpl_DD.html'), 404
 
 @app.route('/site')
-def test(name):
+def site(name):
     return render_template('index__DD.html', name=name)
 
 @app.route('/site')
