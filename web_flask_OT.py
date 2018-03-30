@@ -14,7 +14,7 @@ def index():
 
 @app.route('/user/<name>')
 def user(name):
-    return render_template('Index.html', name = 'Templates')
+    return render_template('Index.html', name = name)
 
 @app.route('/site')
 def redir():
