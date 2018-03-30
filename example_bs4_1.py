@@ -13,8 +13,8 @@ soup_page = BeautifulSoup(response.content,"html.parser")
 #print(soup_page)
 
 #with open("foo.html") as foo_file:
-#	soup = BeautifulSoup(foo_file, "html.parser")
-#print(soup)
+#	bs_soup = BeautifulSoup(foo_file, "html.parser")
+#print(bs_soup)
 
 
 html_atag = """<html><body><p>Test html a tag example</p>

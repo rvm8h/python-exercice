@@ -1,111 +1,32 @@
 # Creer une classe Employee
 # avec une methode __init__ qui prend name et salary comme parametres
-#
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# creer une variable de classe globale qui compte les employes, faire des recherches
+# creer une methode displaycount qui affichele nombre d'employes
+# creer une methode displayEmployee qui affiche un employe
 
-# C extensions
-*.so
+class Employee():
+    nbrEmployes = 0
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.nbrEmployes += 1
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+    def displaycount(self):
+        print("Total employee = {}".format(Employee.nbrEmployes))
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+    def displayEmployee(self):
+        print("Name : {} salary : {}".format(Employee.name, Employee.salary))
 
 
+emp01 = Employee("Spamus", 2000)
+emp02 = Employee("Eggoz", 5000)
+emp03 = Employee("Eggyspa", 7000)
 
+emp01.displayEmployee()
+emp02.displayEmployee()
+emp03.displayEmployee()
 
+emp03.displaycount()
+
+print("Total employee = {}".format(Employee.nbrEmployes))

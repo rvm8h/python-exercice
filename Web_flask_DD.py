@@ -19,9 +19,17 @@ def user(name):
     return '<h1>Hello {} !</h1>'.format(name)
 
 
+@app.route('/test/<name>')
+def test(name):
+    return '<h1>Hello {} !</h1>'.format(name)
+
+@app.error_handler(404)
+def test(name):
+    return '<h1>Hello {} !</h1>'.format(name)
+
 @app.route('/site')
 def redir():
-    return redirect('https://www.python.org/')
+    return render_template('index__DD.html', name=name)
 
 
 if __name__ == '__main__':
