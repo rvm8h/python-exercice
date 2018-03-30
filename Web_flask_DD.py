@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from flask import redirect
+from flask import redirect, render_template
 
 app = Flask(__name__)
 '''
@@ -23,13 +23,17 @@ def user(name):
 def test(name):
     return '<h1>Hello {} !</h1>'.format(name)
 
-@app.error_handler(404)
+@app.errorhandler(404)
+def page_not_found(err):
+    return render_template('tpl_DD.html'), 404
+
+@app.route('/site')
 def test(name):
-    return '<h1>Hello {} !</h1>'.format(name)
+    return render_template('index__DD.html', name=name)
 
 @app.route('/site')
 def redir():
-    return render_template('index__DD.html', name=name)
+    return redirect('https://wwww.infodims.com')
 
 
 if __name__ == '__main__':
