@@ -18,6 +18,10 @@ def user(name):
 def test(name):
     return render_template('index.html', name = name)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', error_message = e),404
+
 @app.route('/site')
 def redir():
     return redirect('https://www.python.org/')
