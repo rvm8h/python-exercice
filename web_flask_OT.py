@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
-from flask import redirect
+from flask import redirect, render_template
+
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ def index():
 
 @app.route('/user/<name>')
 def user(name):
-    return '<h1>Hello {} !</h1>'.format(name)
+    return render_template('Index.html', name = name)
 
 @app.route('/site')
 def redir():
