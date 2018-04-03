@@ -1,10 +1,31 @@
 from flask import Flask
+from flask import request
+from flask import redirect, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<h1>Hello World !</h1>'
+    user_agent = request.headers.get('User-Agent')
+    return '<p>Your browser is {}</p>'.format(user_agent)
+    #return '<h1>Hello World !</h1>'
+
+@app.route('/user/<name>')
+def user(name):
+    return '<h1>Hello {} !</h1>'.format(name)
+
+@app.route('/test/<name>')
+def test(name):
+    return render_template('index.html', name=name)
+
+@app.route('/site')
+def redir():
+    return redirect('https://www.python.org/')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    #return render_template('404.html'),404
+    return render_template('404.html', errorMessage=e),404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
